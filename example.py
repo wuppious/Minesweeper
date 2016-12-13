@@ -3,14 +3,18 @@ import pygame
 
 
 def main():  
+    # Initialize pygame stuff
     pygame.init()
     screen = pygame.display.set_mode((300,300))
     clock = pygame.time.Clock()
     running = True
-    
-    minefield = mine.Minefield(10,10,20)
     font = pygame.font.Font(None, 52)
 
+    # Create our minefield
+    minefield = mine.Minefield(10,10,20)
+
+    # Our minefield is 10 x 10 and our screen is 300 x 300
+    # so 30px x 30px per slot on the field
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
